@@ -12,16 +12,19 @@ def ensure_dir_exists(path):
         os.makedirs(d)
 
 def parse_placeholder_values(placeholder_list=None, placeholder_file=None):
+
+    if placeholder_list == None:
+        placeholder_list = list()
+
     if placeholder_file != None and os.path.isfile(placeholder_file):
         for line in fileinput.input(placeholder_file):
             placeholder_list.append(line)
 
     placeholder_values = dict()
-    if placeholder_list != None:
-        for placeholder in placeholder_list:
-            if placeholder.find('=') != -1:
-                key_value = placeholder.split('=', 1)
-                placeholder_values[key_value[0].strip()] = key_value[1].strip()
+    for placeholder in placeholder_list:
+        if placeholder.find('=') != -1:
+            key_value = placeholder.split('=', 1)
+            placeholder_values[key_value[0].strip()] = key_value[1].strip()
 
     return placeholder_values
 
