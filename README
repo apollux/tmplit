@@ -1,0 +1,34 @@
+tmplit
+======
+
+Simple template instantiator wich can be used to generate whatever text files
+you often need to (re-)create.
+
+tpmlit recursively traverses a directory of templates, applies the placeholders
+from the placeholder file and/or the placeholders provided from tho command 
+line. It builds an output tree according to the structure from the template 
+directory.
+
+It uses Cheetah (http://www.cheetahtemplate.org/)as template parser. The
+powerfull capabilities of Cheetah are available to you :)
+
+Dependencies
+------------
+This project is develed on python 2.7. Not sure about older versions.
+Its sole dependency is Cheetah which should be available.
+
+Usage
+-----
+usage: tmplit.py [-h] --template-dir TEMPLATE_DIR --output-dir OUTPUT_DIR
+                 [--placeholder-file PLACEHOLDER_FILE]
+                 [--placeholders PLACEHOLDERS [PLACEHOLDERS ...]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --template-dir TEMPLATE_DIR
+  --output-dir OUTPUT_DIR
+  --placeholder-file PLACEHOLDER_FILE
+                        Newline separated list of <placeholder>=<value> pairs.
+  --placeholders PLACEHOLDERS [PLACEHOLDERS ...], -p PLACEHOLDERS [PLACEHOLDERS ...]
+                        Provide a space separated list of
+                        <placeholder>=<value> pairs.
