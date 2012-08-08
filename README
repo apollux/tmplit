@@ -12,10 +12,18 @@ directory.
 It uses Cheetah (http://www.cheetahtemplate.org/)as template parser. The
 powerfull capabilities of Cheetah are available to you :)
 
+
 Dependencies
 ------------
 This project is develed on python 2.7. Not sure about older versions.
 Its sole dependency is Cheetah which should be available.
+
+
+Example
+-------
+To quickly see what tmplit does, invoke tmplit like this:
+python tmplit.py --template-dir example/ --output-dir output -p name="<your name>"
+
 
 Usage
 -----
